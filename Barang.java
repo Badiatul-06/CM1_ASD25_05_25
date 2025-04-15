@@ -1,4 +1,3 @@
-import java.util.Scanner;
 public class Barang{
     String kodeBarang;
     String nama;
