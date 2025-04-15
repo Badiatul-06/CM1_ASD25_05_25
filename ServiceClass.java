@@ -7,15 +7,14 @@ public class ServiceClass {
         if (index < Brg.length) {
             Brg[index] = br;
             index++;
-        } else {
-            System.out.println("data sudah penuh");
         }
     }
 
     void tampilBarang(){
+        System.out.printf("%-8s | %-15s | %-12s | %-5s | %-10s\n", "Kode Barang", "Nama Barang", "Kategori", "Stok", "Harga");
+        System.out.println("---------------------------------------------------------------");
         for (Barang barang : Brg) {
-            barang.tampilBarang();
-            System.out.println("----------------------------------------");
+            System.out.printf("%-8s | %-15s | %-12s | %-5d | Rp%-9d\n", barang.kodeBarang, barang.nama, barang.kategori, barang.stok, barang.harga);
         }
     }
 
@@ -29,9 +28,10 @@ public class ServiceClass {
     }
 
     void tampilTransaksi(){
+        System.out.printf("%-10s | %-15s | %-12s | %-15s | %-5s | %-12s\n", "Kode Transaksi", "Nama Pembeli", "Tanggal Pembelian", "Barang", "Kuantitas", "Harga");
+        System.out.println("-------------------------------------------------------------------------------");
         for (TransaksiPembelian transaksi : Trs) {
-            transaksi.tampilDataTransaksi();
-            System.out.println("----------------------------------------");
+            System.out.printf("%-10s | %-15s | %-12s | %-15s | %-5d | Rp%-10d\n", transaksi.kodeTransaksi, transaksi.namaPembeli, transaksi.tanggalPembelian, transaksi.barang.nama, transaksi.qty, transaksi.barang.harga);
         }
     }
 
